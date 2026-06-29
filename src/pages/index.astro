@@ -1,0 +1,179 @@
+---
+import '../styles/global.scss';
+
+const accent = 'oklch(0.6 0.15 38)';
+const dark = true;
+const bg = dark ? 'oklch(0.21 0.012 60)' : 'oklch(0.98 0.008 75)';
+const ink = dark ? 'oklch(0.96 0.006 75)' : 'oklch(0.24 0.012 60)';
+const muted = dark ? 'oklch(0.72 0.01 65)' : 'oklch(0.52 0.012 60)';
+const line = dark ? 'oklch(0.34 0.012 60)' : 'oklch(0.9 0.008 70)';
+
+const skills = [
+  { no: '01', title: 'Web Development', body: 'Front-end with Angular, HTML, CSS & JavaScript; back-end with .NET, ASP.NET, C# and REST APIs — integrated end to end.' },
+  { no: '02', title: 'Microcontrollers', body: 'Programming and configuring controllers, embedded firmware for IoT devices, and control systems for robotics.' },
+  { no: '03', title: 'Database Management', body: 'Efficient schema design across SQL (MySQL, PostgreSQL), with sound data modeling and query optimisation.' },
+  { no: '04', title: 'CI / CD', body: 'Setting up pipelines that automate build, test and deployment for faster, more reliable delivery.' },
+  { no: '05', title: 'Problem Solving', body: 'Analytical thinking to break down complex issues, plus the adaptability to pick up new tech quickly.' },
+  { no: '06', title: 'Versatile Toolkit', body: 'Mobile apps, visual mockups, and exposure to Python, PHP, Java, Vue.js and Processing.' },
+];
+
+const projects = [
+  { slot: '[ project screenshot ]', title: 'Coming soon', body: 'A flagship project is in the works — this space is reserved for the case study.' },
+  { slot: '[ project screenshot ]', title: 'Coming soon', body: 'Another build is on the way. Check back shortly for the full write-up.' },
+];
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artem Krainiev — Front-End Developer</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body style={`--accent:${accent};--bg:${bg};--ink:${ink};--muted:${muted};--line:${line}`}>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#home" class="logo">
+      <span class="logo__dot"></span>KRAINIEV
+    </a>
+    <nav class="nav">
+      <a href="#about" class="nav__link">About</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#contact" class="nav__cta">Get in touch</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero__content">
+      <p class="hero__label">Front-End Developer · Lublin, PL</p>
+      <h1 class="hero__title">
+        Building clean,<br />human interfaces<br />for the <span class="hero__title-accent">web.</span>
+      </h1>
+      <p class="hero__bio">
+        I'm Artem — a front-end developer leading the frontend team on remote-learning apps with Angular, and steadily growing into full-stack .NET. When I'm not shipping UI, I'm tinkering with Arduino, traveling, or playing guitar.
+      </p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">See my work</a>
+        <a href="#contact" class="btn btn--outline">Contact me</a>
+      </div>
+    </div>
+    <div class="hero__photo-wrap">
+      <div class="hero__photo-bg"></div>
+      <img src="/artem.jpg" alt="Artem Krainiev" class="hero__photo" />
+    </div>
+  </section>
+
+  <!-- TECH STRIP -->
+  <div class="tech-strip">
+    <span>ANGULAR</span><span class="tech-strip__sep">/</span>
+    <span>TYPESCRIPT</span><span class="tech-strip__sep">/</span>
+    <span>.NET · C#</span><span class="tech-strip__sep">/</span>
+    <span>HTML · CSS · JS</span><span class="tech-strip__sep">/</span>
+    <span>SQL</span><span class="tech-strip__sep">/</span>
+    <span>ARDUINO</span>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about__meta">
+      <p class="section-label">01 — About</p>
+      <h2 class="about__title">A developer, but interesting :)</h2>
+      <div class="about__edu">
+        <p class="about__edu-label">Education</p>
+        <div class="about__edu-entries">
+          <div>
+            <p class="about__edu-degree">MSc in Computer Science</p>
+            <p class="about__edu-school">WSPA · Lublin</p>
+          </div>
+          <div>
+            <p class="about__edu-degree">BEng in Computer Science</p>
+            <p class="about__edu-school">WSPA · Lublin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about__body">
+      <p><strong>Experienced front-end developer.</strong> With 5+ years of commercial experience I specialize in front-end work, building interactive remote-learning apps in Angular. As frontend team lead I deliver user-centric interfaces and ship high-quality products with my team.</p>
+      <p><strong>Aspiring full-stack.</strong> I'm expanding into .NET to become a well-rounded full-stack developer. Curiosity drives me to explore new technologies and frameworks at every opportunity.</p>
+      <p><strong>Beyond code.</strong> A Computer Science degree gave me a solid foundation, and I stay current with the industry. Outside programming I travel, play guitar and sing, and build Arduino projects where technical skill meets creativity.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="skills__inner">
+      <div class="skills__header">
+        <div>
+          <p class="section-label">02 — Skills</p>
+          <h2 class="section-title">What I bring to the table</h2>
+        </div>
+        <p class="skills__quote">"Success is the seamless integration of many skills."</p>
+      </div>
+      <div class="skills__grid">
+        {skills.map(s => (
+          <div class="skill-card">
+            <span class="skill-card__no">{s.no}</span>
+            <h3 class="skill-card__title">{s.title}</h3>
+            <p class="skill-card__body">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="work">
+    <p class="section-label">03 — Work</p>
+    <div class="work__header">
+      <h2 class="section-title">Selected projects</h2>
+      <span class="work__badge">In progress…</span>
+    </div>
+    <div class="work__grid">
+      {projects.map(p => (
+        <div class="project">
+          <div class="project__thumb">{p.slot}</div>
+          <div class="project__body">
+            <h3 class="project__title">{p.title}</h3>
+            <p class="project__desc">{p.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <p class="section-label">04 — Contact</p>
+        <h2 class="contact__title">Let's build<br />something.</h2>
+        <p class="contact__intro">Interested in working together or just want to say hi? Drop me a line — I read every message.</p>
+        <a href="mailto:krainievlc@gmail.com" class="contact__email">krainievlc@gmail.com</a>
+        <div class="contact__socials">
+          <a href="https://www.instagram.com/krainievlc" target="_blank" rel="noopener" class="contact__social">Instagram ↗</a>
+          <a href="https://www.linkedin.com/in/artem-krainiev-191704202" target="_blank" rel="noopener" class="contact__social">LinkedIn ↗</a>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/mnqkdqbo" method="post" class="contact-form">
+        <h3 class="contact-form__title">Message me</h3>
+        <input class="form-field" type="text" name="name" placeholder="Your name" required />
+        <input class="form-field" type="email" name="email" placeholder="Email" required />
+        <textarea class="form-field form-field--textarea" name="message" placeholder="Your message" rows="5" required></textarea>
+        <button class="form-submit" type="submit">Send message</button>
+      </form>
+    </div>
+    <footer class="footer">
+      <span>© 2026 Artem Krainiev</span>
+      <span class="footer__mono">Designed &amp; built with care</span>
+    </footer>
+  </section>
+
+</body>
+</html>
