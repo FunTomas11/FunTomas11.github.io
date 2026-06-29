@@ -1,3 +1,9 @@
+// Mouse spotlight
+document.addEventListener('mousemove', ({ clientX: x, clientY: y }) => {
+  document.body.style.setProperty('--mouse-x', `${x}px`);
+  document.body.style.setProperty('--mouse-y', `${y}px`);
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(entry => {

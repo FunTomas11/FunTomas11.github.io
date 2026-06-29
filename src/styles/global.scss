@@ -612,17 +612,60 @@ body {
 }
 
 @keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  50%       { transform: rotate(-4deg) translateY(-12px); }
 }
 
 // Hero: wejście przy załadowaniu
-.hero__label    { animation: fade-up 0.55s ease both 0.05s; }
-.hero__title    { animation: fade-up 0.65s ease both 0.18s; }
-.hero__bio      { animation: fade-up 0.55s ease both 0.33s; }
-.hero__actions  { animation: fade-up 0.55s ease both 0.48s; }
-.hero__photo-wrap { animation: fade-up 0.7s ease both 0.2s; }
-.hero__photo-bg { animation: floaty 6s ease-in-out infinite 1s; }
+.hero__label      { animation: fade-up 0.55s ease both 0.05s; }
+.hero__bio        { animation: fade-up 0.55s ease both 0.6s; }
+.hero__actions    { animation: fade-up 0.55s ease both 0.75s; }
+.hero__photo-wrap { animation: fade-up 0.7s  ease both 0.2s; }
+.hero__photo-bg   { animation: floaty 6s ease-in-out infinite 1s; }
+
+// Tytuł hero: linia po linii (slide-up z maski)
+@keyframes slide-up {
+  from { transform: translateY(110%); }
+  to   { transform: translateY(0); }
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+
+  &__inner {
+    display: block;
+    animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+.hero__title {
+  .line:nth-child(1) .line__inner { animation-delay: 0.1s; }
+  .line:nth-child(2) .line__inner { animation-delay: 0.28s; }
+  .line:nth-child(3) .line__inner { animation-delay: 0.46s; }
+}
+
+// Mouse spotlight
+body {
+  --mouse-x: -9999px;
+  --mouse-y: -9999px;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      color-mix(in oklab, var(--accent), transparent 88%),
+      transparent 40%
+    );
+    mix-blend-mode: screen;
+
+    @media (hover: none) { display: none; }
+  }
+}
 
 // Scroll reveal — stan bazowy
 [data-reveal] {
@@ -677,6 +720,8 @@ body {
     transition-duration: 0.01ms !important;
   }
   [data-reveal] { opacity: 1; transform: none; }
+  body::before  { display: none; }
+  .line__inner  { animation: none; }
 }
 
 // ─── Footer ─────────────────────────────────────────────────────────────────
